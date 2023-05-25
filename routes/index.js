@@ -10,7 +10,6 @@ const NotFoundError = require('../errors/NotFoundError');
 
 router.post('/signin', celebrate({
   body: Joi.object().keys({
-    name: Joi.string().required(),
     email: Joi.string().required().email(),
     password: Joi.string().required(),
   }),
@@ -18,7 +17,7 @@ router.post('/signin', celebrate({
 
 router.post('/signup', celebrate({
   body: Joi.object().keys({
-    name: Joi.string().required(),
+    name: Joi.string().required().min(2).max(30),
     email: Joi.string().required().email(),
     password: Joi.string().required(),
   }),
