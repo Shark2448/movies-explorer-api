@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const { mongooseURL } = require('./constants');
 const rateLimiterUsingThirdParty = require('./middlewares/rateLimiter');
 const helmet = require('helmet');
-// const cors = require('cors');
+const cors = require('cors');
 
 const { PORT = 3000, MONGO_URL, NODE_ENV } = process.env;
 
@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(helmet());
 
-// app.use(cors());
+app.use(cors());
 
 app.use(requestLogger);
 
