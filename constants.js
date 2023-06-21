@@ -24,7 +24,7 @@ const celebrateCreateMovie = celebrate({
     duration: Joi.number().required(),
     year: Joi.string().required(),
     description: Joi.string().required(),
-    image: Joi.string().required().uri(),
+    image: Joi.string().required(),
     trailerLink: Joi.string().required().uri(),
     thumbnail: Joi.string().required().uri(),
     movieId: Joi.number().required(),
